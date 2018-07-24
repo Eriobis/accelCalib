@@ -84,7 +84,6 @@ void printCoord(xyz_coord_t coord)
  */
 int getMatrixDeterminant(coord_matrix_t *matrix)
 {
-  int i,j,n;
   double det=0;
 
     printf("\n\nCalculate the determinant of a 3 x 3 matrix :\n");
@@ -112,7 +111,6 @@ coord_matrix_t get_xRotate(xyz_coord_t coord)
 {
     double angle;
     coord_matrix_t xRotate;
-    int i,j;
 
     //printf("The input coord are: %f , %f, %f \n", coord.x, coord.y, coord.z);
     angle = atan(coord.z/coord.y);
@@ -146,8 +144,7 @@ coord_matrix_t get_yRotate(xyz_coord_t coord)
     double angle;
     coord_matrix_t yRotate;
     double r;
-    double cos_angle, sin_angle;
-    double r_sign;
+
     r = sqrt(pow(coord.x,2)+pow(coord.y,2));
     angle = -atan2(coord.z,r) + M_PI_2 + M_PI;
 
@@ -177,7 +174,6 @@ coord_matrix_t get_yRotate(xyz_coord_t coord)
  */
 coord_matrix_t get_zRotate(xyz_coord_t coord)
 {
-    double angle;
     double r;
     coord_matrix_t zRotate;
 
