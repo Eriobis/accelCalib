@@ -8,6 +8,7 @@
 /* Includes ---------------------------------------------------------------------------------------------------------*/
 
 #include "acc_calibration.h"
+#include <string.h>
 
 /* Local Defines ----------------------------------------------------------------------------------------------------*/
 
@@ -64,7 +65,6 @@ int calibration_example()
 coord_matrix_t get_negative_z_matrix(xyz_coord_t *coord)
 {
     xyz_coord_t normCoord;
-    coord_matrix_t;
 
     //printCoord(*coord);
     normCoord = normalize3(*coord);
@@ -84,7 +84,6 @@ coord_matrix_t get_negative_z_matrix(xyz_coord_t *coord)
 coord_matrix_t get_x_adjust_matrix(xyz_coord_t *coord)
 {
     xyz_coord_t normCoord;
-    coord_matrix_t;
 
     //printCoord(*coord);
     normCoord = normalize3(*coord);
@@ -103,7 +102,7 @@ coord_matrix_t get_x_adjust_matrix(xyz_coord_t *coord)
   */
 void set_conversionMatrix(coord_matrix_t matrix)
 {
-    memcpy(conversionMatrix, matrix, sizeof(coord_matrix_t));
+    memcpy(&conversionMatrix, &matrix, sizeof(coord_matrix_t));
 }
 
 /**
